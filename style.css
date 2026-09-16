@@ -137,7 +137,7 @@ h1 span{color:var(--sage);display:block}
 .stat span{color:var(--muted);font-size:14px}
 
 /* ---------- Contacto ---------- */
-.contact{padding:40px 0 60px}
+.contact{padding:70px 0 60px}
 .contact-panel{position:relative;overflow:hidden;border-radius:22px;border:1px solid var(--line);display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:18px;align-items:stretch;padding:22px 22px 22px 64px;min-height:280px}
 .contact-bg{position:absolute;inset:0;z-index:0}
 .contact-panel::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(14,26,18,.55) 0%,rgba(16,28,20,.88) 35%,rgba(18,30,22,.95) 100%)}
@@ -213,6 +213,7 @@ footer .logo-img{height:36px}
   .wrap{padding:0 16px}
   section{padding:80px 0}
   .logo-img{height:40px}
+  .about .wrap{padding-top:80px}
   .cards,.p-row,.contact-panel{grid-template-columns:1fr}
   .pcard{height:340px}
   .feat-card .ph{width:100px;height:90px}

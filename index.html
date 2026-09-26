@@ -414,7 +414,7 @@ const io = new IntersectionObserver(es => es.forEach(e => {
 $$('.reveal').forEach(el => io.observe(el));
 
 /* WhatsApp y correo */
-const wa = txt => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(txt)}`;
+const wa = txt => `https://wa.me/${WHATSAPP.replace(/\D/g,'')}?text=${encodeURIComponent(txt)}`;
 $('#waBtn').href = wa('Hola Garden Jireh, me gustaría cotizar un proyecto para mi espacio.');
 $('#mailBtn').href = `mailto:${CORREO}?subject=${encodeURIComponent('Solicitud de cotización')}&body=${encodeURIComponent('Hola Garden Jireh,\n\nMe gustaría cotizar un proyecto.\n\nNombre:\nTeléfono:\nUbicación:\nServicio que necesito:\nDetalles:\n')}`;
 

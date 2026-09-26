@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=11">
+<link rel="stylesheet" href="style.css?v=12">
 </head>
 <body>
 
@@ -166,6 +166,20 @@
           <span class="circle"><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span>
         </div>
       </a>
+      <a class="pcard ph reveal" data-proyecto="metromall" role="button" tabindex="0" aria-label="Ver proyecto Metromall">
+        <img class="ph-img" data-img="metromall1" alt="Metromall" loading="lazy">
+        <div class="pcard-info">
+          <div><small>Comercial · Panamá</small><h3>Metromall</h3></div>
+          <span class="circle"><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+      <a class="pcard ph reveal" data-proyecto="golfgarden" role="button" tabindex="0" aria-label="Ver proyecto Golf Gardens">
+        <img class="ph-img" data-img="golfgarden1" alt="Golf Gardens" loading="lazy">
+        <div class="pcard-info">
+          <div><small>Áreas verdes · Panamá</small><h3>Golf Gardens</h3></div>
+          <span class="circle"><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
     </div>
 
     <!-- EDITAR: ajusta estas cifras a los datos reales de la empresa -->
@@ -259,7 +273,9 @@ const IMAGENES = {
   nosotros:              W + "countryclub14.jpg",
   contacto:              W + "Contacto.jpg",
   altaplaza1:            W + "altaplaza3.jpg",
-  countryclub1:          W + "countryclub5.jpg"
+  countryclub1:          W + "countryclub5.jpg",
+  metromall1:            W + "metromall1.jpg",
+  golfgarden1:           W + "golfgarden1.jpg"
 };
 
 /* Proyectos del portafolio: la primera foto es la portada del proyecto */
@@ -274,11 +290,21 @@ const PROYECTOS = {
     desc: "Cuidado integral de jardines y áreas recreativas, con céspedes y plantas ornamentales impecables todo el año.",
     fotos: ["countryclub5","countryclub3","countryclub14","countryclub1","countryclub2","countryclub11",
             "countryclub6","countryclub4","countryclub10","countryclub9","countryclub8"].map(f => W + f + ".jpg")
+  },
+  metromall: {
+    titulo: "Metromall",
+    desc: "Jardinería y mantenimiento de áreas verdes en un centro comercial de alto tránsito, con palmas y plantas ornamentales siempre impecables.",
+    fotos: Array.from({length:12}, (_,i) => W + "metromall" + (i+1) + ".jpg")
+  },
+  golfgarden: {
+    titulo: "Golf Gardens",
+    desc: "Diseño y cuidado de jardines, setos y palmas en áreas exteriores, con espacios verdes vivos y bien mantenidos.",
+    fotos: Array.from({length:11}, (_,i) => W + "golfgarden" + (i+1) + ".jpg")
   }
 };
 
-const WHATSAPP = "50760000000"; // solo dígitos, con código de país
-const CORREO   = "info@gardenjireh.com";
+const WHATSAPP = "5076514-5580"; 
+const CORREO   = "Anamata2203@hotmail.com";
 /* ========================================================= */
 
 const $ = s => document.querySelector(s);
@@ -331,7 +357,10 @@ function showG(i){
   gi = (i + gal.fotos.length) % gal.fotos.length;
   setImg($('#mImg'), gal.fotos[gi]);
   $('#mImg').alt = `${gal.titulo} — foto ${gi+1} de ${gal.fotos.length}`;
-  $$('#mThumbs button').forEach((b,k) => b.classList.toggle('on', k === gi));
+  $$('#mThumbs button').forEach((b,k) => {
+    b.classList.toggle('on', k === gi);
+    if (k === gi) b.scrollIntoView({block:'nearest', inline:'center'});
+  });
 }
 function closeG(){ modal.classList.remove('open'); document.body.style.overflow = ''; }
 $('.close').onclick = closeG;

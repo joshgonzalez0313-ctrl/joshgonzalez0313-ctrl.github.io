@@ -1,0 +1,19 @@
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "Garden Jireh",
+  "description": "Diseño, instalación y mantenimiento de jardines, paisajismo y sistemas de riego en Panamá.",
+  "url": "https://gardenjireh.org/",
+  "image": "https://gardenjireh.org/Imagenes/Portada/hero-web.jpg",
+  "telephone": "+507 6514-5580",
+  "email": "Anamata2203@hotmail.com",
+  "areaServed": {
+    "@type": "City",
+    "name": "Panamá"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Panamá",
+    "addressCountry": "PA"
+  }
+}

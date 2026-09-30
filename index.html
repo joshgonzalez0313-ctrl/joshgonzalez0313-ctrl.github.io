@@ -18,8 +18,9 @@
 <meta name="twitter:description" content="Diseño, construcción y mantenimiento de jardines y paisajismo en Panamá.">
 <meta name="twitter:image" content="https://gardenjireh.org/Imagenes/Portada/hero-web.jpg">
 <link rel="canonical" href="https://gardenjireh.org/">
-<meta name="referrer" content="strict-origin-when-cross-origin">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; img-src 'self' data:; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self'">
+<!-- La CSP y Referrer-Policy ahora se envian como cabecera HTTP real
+     (Cloudflare Worker) en vez de <meta>: cubre mas casos (frame-ancestors)
+     y ya no genera un choque de dos politicas distintas en el navegador. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
